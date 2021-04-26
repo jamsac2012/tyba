@@ -1,0 +1,25 @@
+{
+    "nameApp" : "tyba",
+    "cities" : [
+        {
+            "city" : "Medellín",
+            "partners" : ["Pinky", "Crepes & wafles", "SushiLight"]
+        },
+        {
+            "city" : "Bogota",
+            "partners" : ["Pinky", "Crepes & wafles", "SushiLight"]
+        },
+        {
+            "city" : "Cali",
+            "partners" : ["Pinky", "Crepes & wafles", "SushiLight"]
+        },
+        {
+            "city" : "Pereira",
+            "partners" : ["Pinky", "Crepes & wafles", "SushiLight"]
+        },
+        {
+            "city" : "Barranquilla",
+            "partners" : ["Pinky", "Crepes & wafles", "SushiLight"]
+        }
+    ]
+}
