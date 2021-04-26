@@ -18,7 +18,7 @@ class LoginButton extends StatelessWidget {
         return ElevatedButton(
           child: Text('Enviar'),
           style: ElevatedButton.styleFrom(
-            primary: Color(0xfff57c24),
+            primary: Color(0xff073a32),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(5.0) ),
               padding: EdgeInsets.symmetric(horizontal: 120.0, vertical: 10.0)),

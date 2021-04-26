@@ -1,4 +1,6 @@
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
+
 import 'package:tyba/src/bloc/login_bloc.dart';
 import 'package:tyba/src/bloc/provider.dart' as providerValidation;
 import 'package:tyba/src/providers/firebase_provider.dart';
@@ -30,17 +32,21 @@ class LoginButton extends StatelessWidget {
 
   _login(BuildContext context, LoginBloc bloc) async{
 
-    Map result = await firebaseProvider.loginUser(bloc.email, bloc.password);
-
-    if (result['ok']) {
-        Navigator.pushReplacementNamed(context, 'business');
-    }else{
-       print(result['message']);
-       final snackBar = SnackBar(
+    final snackBar = SnackBar(
             content: Text('Esta ingresando datos incorrectos, por favor reintentelo nuevamente'),
             backgroundColor: Colors.red,
             elevation: 10.0 ,
           );
+
+    Map result = await firebaseProvider.loginUser(bloc.email, bloc.password);
+
+    if (result['ok']) {
+       ( bloc.password != '')
+          ? Navigator.pushReplacementNamed(context, 'business')
+          : ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    }else{
+       print(result['message']);
+       
           ScaffoldMessenger.of(context).showSnackBar(snackBar);
     }
 
