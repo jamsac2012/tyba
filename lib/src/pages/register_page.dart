@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:tyba/src/widgets/shared/form_background.dart';
-import 'package:tyba/src/widgets/Login/login_form.dart';
+import 'package:tyba/src/widgets/register/register_form.dart';
 
 
 
-class LoginPage extends StatelessWidget {
+class RegisterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class LoginPage extends StatelessWidget {
       body: Stack(
         children: [
           LoginBackground(),
-          LoginForm()
+          RegisterForm()
         ],
       )
     );

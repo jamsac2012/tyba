@@ -16,9 +16,9 @@ class LoginButton extends StatelessWidget {
       stream: bloc.formValidStream ,
       builder: (BuildContext context, AsyncSnapshot snapshot){
         return ElevatedButton(
-          child: Text('Ingresar'),
+          child: Text('Enviar'),
           style: ElevatedButton.styleFrom(
-            primary: Color(0xff073a32),
+            primary: Color(0xfff57c24),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(5.0) ),
               padding: EdgeInsets.symmetric(horizontal: 120.0, vertical: 10.0)),
@@ -30,10 +30,17 @@ class LoginButton extends StatelessWidget {
 
   _login(BuildContext context, LoginBloc bloc) async{
 
-    Map result = await firebaseProvider.loginUser(bloc.email, bloc.password);
+
+    Map result = await firebaseProvider.registerUser(bloc.email, bloc.password);
 
     if (result['ok']) {
-        Navigator.pushReplacementNamed(context, 'business');
+        Navigator.pushReplacementNamed(context, '/');
+        final snackBar = SnackBar(
+            content: Text('Usuario registrado con éxito'),
+            backgroundColor: Colors.green,
+            elevation: 10.0 ,
+          );
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
     }else{
        print(result['message']);
        final snackBar = SnackBar(

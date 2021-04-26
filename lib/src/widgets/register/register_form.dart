@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:tyba/src/widgets/shared/form_email.dart';
+import 'package:tyba/src/widgets/shared/form_password.dart';
 
-import 'login_button.dart';
-import '../shared/form_email.dart';
-import '../shared/form_password.dart';
+import 'register_button.dart';
 
-class LoginForm extends StatelessWidget {
+class RegisterForm extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class LoginForm extends StatelessWidget {
             ),
             child: Column(
               children: [
-                Text('Ingreso', style: TextStyle(fontSize: 20.0),),
+                Text('Registro', style: TextStyle(fontSize: 20.0),),
                 SizedBox(height: 50.0),
                 LoginEmail(),
                 SizedBox(height: 10.0),
@@ -47,8 +47,8 @@ class LoginForm extends StatelessWidget {
               ],
             ),),
             TextButton(
-              child: Text('Registrarse'),
-              onPressed: () => Navigator.pushReplacementNamed(context, 'register'),
+              child: Text('Iniciar sesión'),
+              onPressed: () => Navigator.pushReplacementNamed(context, '/'),
             ),
             SizedBox(height: 80.0),
         ],
